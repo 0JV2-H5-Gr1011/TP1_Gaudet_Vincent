@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FinDuJeu : MonoBehaviour
 {
@@ -14,13 +15,13 @@ public class FinDuJeu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter()
@@ -29,10 +30,20 @@ public class FinDuJeu : MonoBehaviour
         trous2 = GameObject.Find("flag-blue").GetComponent<Checkpoint2>().hit2;
         trous3 = GameObject.Find("flag-red").GetComponent<Checkpoint3>().hit3;
         trous4 = GameObject.Find("flag-large-red").GetComponent<Checkpoint4>().hit4;
-        if(trous1 == true && trous2 == true && trous3 == true && trous4 == true){
-        
-        Debug.Log("Victoire");
+        if (trous1 == true && trous2 == true && trous3 == true && trous4 == true)
+        {
+
+            SceneManager.LoadScene("Reussite");
 
         }
+        else
+        {
+            SceneManager.LoadScene("Echec");
+        }
+    }
+
+    public void Jouer()
+    {
+        SceneManager.LoadScene("NiveauJeu");
     }
 }
