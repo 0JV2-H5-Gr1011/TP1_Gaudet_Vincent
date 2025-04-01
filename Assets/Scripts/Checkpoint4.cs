@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Checkpoint2 : MonoBehaviour
+public class Checkpoint4 : MonoBehaviour
 {
-
-    public bool hit2 = false;
+     public bool hit4 = false;
     public float trous = 0;
     public TextMeshProUGUI trousTexte;
     bool trous1;
+    bool trous2;
+    bool trous3;
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +28,11 @@ public class Checkpoint2 : MonoBehaviour
     {
         trousTexte = GameObject.Find("flag-green").GetComponent<Checkpoint1>().trousTexte;
         trous1 = GameObject.Find("flag-green").GetComponent<Checkpoint1>().hit1;
-        if(hit2==false && trous1 == true){
-            trous = 2;
-            hit2 = true;
+        trous2 = GameObject.Find("flag-blue").GetComponent<Checkpoint2>().hit2;
+        trous3 = GameObject.Find("flag-red").GetComponent<Checkpoint3>().hit3;
+        if(hit4==false && trous1 == true && trous2 == true && trous3 == true){
+            trous = 4;
+            hit4 = true;
             string score = trous.ToString();
             string fraction = "/4 Trous";
             trousTexte.text = score+fraction;

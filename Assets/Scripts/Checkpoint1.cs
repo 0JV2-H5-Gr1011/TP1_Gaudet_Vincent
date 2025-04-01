@@ -13,7 +13,9 @@ public class Checkpoint1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        string score = trous.ToString();
+             string fraction = "/4 Trous";
+            trousTexte.text = score+fraction;
     }
 
     // Update is called once per frame
