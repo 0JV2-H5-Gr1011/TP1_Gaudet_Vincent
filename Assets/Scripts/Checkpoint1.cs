@@ -17,14 +17,14 @@ public class Checkpoint1 : MonoBehaviour
     void Start()
     {
         string score = trous.ToString();
-             string fraction = "/4 Trous";
-            trousTexte.text = score+fraction;
+        string fraction = "/4 Trous";
+        trousTexte.text = score + fraction;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     /// <summary>
@@ -33,21 +33,24 @@ public class Checkpoint1 : MonoBehaviour
     /// <param name="other">The other Collider involved in this collision.</param>
     private void OnTriggerEnter(Collider other)
     {
-        int i = 1;
-        
-        while(i < 7){
-        _position = new Vector3(Random.Range(8f, 18f), 402f, Random.Range(214f, 215f));
-        _rotation = Random.rotation;
-        Instantiate(_objet, _position, _rotation);
-        i += 1;
-        }
 
-        if(hit1==false){
+
+        if (hit1 == false)
+        {
+            int i = 1;
+            while (i < 7)
+            {
+                _position = new Vector3(Random.Range(8f, 18f), 402f, Random.Range(214f, 215f));
+                _rotation = Random.rotation;
+                Instantiate(_objet, _position, _rotation);
+                i += 1;
+            }
+
             trous += 1;
             hit1 = true;
             string score = trous.ToString();
-             string fraction = "/4 Trous";
-            trousTexte.text = score+fraction;
+            string fraction = "/4 Trous";
+            trousTexte.text = score + fraction;
         }
     }
 }
