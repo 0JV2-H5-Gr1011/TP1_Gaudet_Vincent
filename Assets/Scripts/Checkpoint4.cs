@@ -34,17 +34,20 @@ public class Checkpoint4 : MonoBehaviour
         trous2 = GameObject.Find("flag-blue").GetComponent<Checkpoint2>().hit2;
         trous3 = GameObject.Find("flag-red").GetComponent<Checkpoint3>().hit3;
 
-        int i = 1;
-        while (i < 36)
-        {
-            _position = new Vector3(Random.Range(13.8f, 17.5f), 402f, Random.Range(271f, 281f));
-            _rotation = Random.rotation;
-            Instantiate(_objet, _position, _rotation);
-            i += 1;
-        }
+
 
         if (hit4 == false && trous1 == true && trous2 == true && trous3 == true)
         {
+
+            int i = 1;
+            while (i < 36)
+            {
+                _position = new Vector3(Random.Range(13.8f, 17.5f), 402f, Random.Range(271f, 281f));
+                _rotation = Random.rotation;
+                Instantiate(_objet, _position, _rotation);
+                i += 1;
+            }
+
             trous = 4;
             hit4 = true;
             string score = trous.ToString();
